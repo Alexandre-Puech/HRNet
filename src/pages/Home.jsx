@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="container">
       <Header
-        title="HRNet"
+        title="HRnet"
         link={<Link to="/employee-list">View Current Employees</Link>}
       />
       <h2 className="home-title">Create Employee</h2>
