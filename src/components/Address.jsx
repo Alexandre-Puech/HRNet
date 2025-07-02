@@ -6,10 +6,10 @@ export default function Address() {
   return (
     <fieldset className="address">
       <legend>Address</legend>
-      <InputField label="Street" />
-      <InputField label="City" />
+      <InputField type="text" label="Street" />
+      <InputField type="text" label="City" />
       <Dropdown label="State" options={states} />
-      <InputField label="Zip Code" />
+      <InputField type="number" label="Zip Code" />
     </fieldset>
   );
 }

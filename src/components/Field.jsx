@@ -1,10 +1,10 @@
-export default function InputField({ label }) {
+export default function InputField({ label, type }) {
   const id = label.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <>
       <label htmlFor={id}>{label}</label>
-      <input type="text" id={id} name={id} />
+      <input type={type} id={id} name={id} />
     </>
   );
 }

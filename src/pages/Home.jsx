@@ -2,6 +2,9 @@ import InputField from "../components/Field";
 import Header from "../components/Header";
 import { Link } from "react-router";
 import Address from "../components/Address";
+import Dropdown from "../components/Dropdown";
+import { departments } from "../data/departments.js";
+import DateField from "../components/DatePicker.jsx";
 
 export default function Home() {
   return (
@@ -12,12 +15,12 @@ export default function Home() {
       />
       <h2 className="home-title">Create Employee</h2>
       <form id="create-employee" action="#">
-        <InputField label="First Name" />
-        <InputField label="Last Name" />
-        <InputField label="Date of Birth" />
-        <InputField label="Start Date" />
+        <InputField type="text" label="First Name" />
+        <InputField type="text" label="Last Name" />
+        <DateField label="Date of Birth" />
+        <DateField label="Start Date" />
         <Address />
-        <InputField label="Department" />
+        <Dropdown label="Departments" options={departments} />
       </form>
     </div>
   );
