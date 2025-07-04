@@ -1,23 +1,35 @@
-import { useState } from "react";
-
-export default function Dropdown({ label, options = [] }) {
-  const [selected, setSelected] = useState(
-    options.length > 0 ? options[0].value ?? options[0] : ""
-  );
+export default function Dropdown({
+  label,
+  name,
+  value,
+  options = [],
+  onChange,
+}) {
+  const id = name ?? label.toLowerCase().replace(/\s+/g, "-");
 
   const handleChange = (e) => {
-    setSelected(e.target.value);
+    onChange?.(e.target.value);
   };
 
   return (
     <div className="dropdown-container">
-      {label && <label className="dropdown-label">{label}</label>}
-      <select className="dropdown" value={selected} onChange={handleChange}>
+      {label && (
+        <label htmlFor={id} className="dropdown-label">
+          {label}
+        </label>
+      )}
+      <select
+        className="dropdown"
+        value={value ?? ""}
+        onChange={handleChange}
+        name={name}
+        id={id}
+      >
         {options.map((option, index) => {
-          const value = option.value ?? option.abbreviation ?? option;
+          const optionValue = option.value ?? option.abbreviation ?? option;
           const label = option.label ?? option.name ?? option;
           return (
-            <option key={index} value={value}>
+            <option key={index} value={optionValue}>
               {label}
             </option>
           );

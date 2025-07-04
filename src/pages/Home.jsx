@@ -5,8 +5,20 @@ import Address from "../components/Address";
 import Dropdown from "../components/Dropdown";
 import { departments } from "../data/departments.js";
 import DateField from "../components/DatePicker.jsx";
+import SaveButton from "../components/SaveButton.jsx";
+import { useState } from "react";
+import { initialFormData } from "../utils/FormData.js";
 
 export default function Home() {
+  const [formData, setFormData] = useState(initialFormData);
+
+  const updateField = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
+
   return (
     <div className="container">
       <Header
@@ -15,13 +27,38 @@ export default function Home() {
       />
       <h2 className="home-title">Create Employee</h2>
       <form id="create-employee" action="#">
-        <InputField type="text" label="First Name" />
-        <InputField type="text" label="Last Name" />
-        <DateField label="Date of Birth" />
-        <DateField label="Start Date" />
-        <Address />
-        <Dropdown label="Departments" options={departments} />
+        <InputField
+          type="text"
+          label="First Name"
+          value={formData.firstName}
+          onChange={(value) => updateField("firstName", value)}
+        />
+        <InputField
+          type="text"
+          label="Last Name"
+          value={formData.lastName}
+          onChange={(value) => updateField("lastName", value)}
+        />
+        <DateField
+          label="Date of Birth"
+          value={formData.dateOfBirth}
+          onChange={(value) => updateField("dateOfBirth", value)}
+        />
+        <DateField
+          label="Start Date"
+          value={formData.startDate}
+          onChange={(value) => updateField("startDate", value)}
+        />
+        <Address formData={formData} updateField={updateField} />
+        <Dropdown
+          label="Departments"
+          options={departments}
+          name="department"
+          value={formData.department}
+          onChange={(val) => updateField("department", val)}
+        />
       </form>
+      <SaveButton data={formData} />
     </div>
   );
 }
