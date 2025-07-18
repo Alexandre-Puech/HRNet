@@ -3,20 +3,26 @@ import Header from "../components/Header";
 import { Link } from "react-router";
 import Address from "../components/Address";
 import Dropdown from "../components/Dropdown";
-import { departments } from "../data/departments.js";
+import { departments } from "../constants/departments.js";
 import DateField from "../components/DatePicker.jsx";
 import SaveButton from "../components/SaveButton.jsx";
 import { useState } from "react";
 import { initialFormData } from "../utils/FormData.js";
+import Modal from "../components/Modal.jsx";
 
 export default function Home() {
   const [formData, setFormData] = useState(initialFormData);
+  const [showModal, setShowModal] = useState(false);
 
   const updateField = (field, value) => {
     setFormData((prevData) => ({
       ...prevData,
       [field]: value,
     }));
+  };
+
+  const handleConfirm = () => {
+    setShowModal(true);
   };
 
   return (
@@ -58,7 +64,12 @@ export default function Home() {
           onChange={(val) => updateField("department", val)}
         />
       </form>
-      <SaveButton data={formData} />
+      <SaveButton data={formData} onConfirm={handleConfirm} />
+      <Modal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        content="Employee Created!"
+      />
     </div>
   );
 }

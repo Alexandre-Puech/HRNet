@@ -1,7 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
-  employees: [],
+  employees: [
+    {
+      firstName: "aa",
+      lastName: "aa",
+      dateOfBirth: "07/03/2025",
+      startDate: "07/03/2025",
+      department: "aa",
+      street: "aa",
+      city: "aa",
+      livingState: "aa",
+      zipCode: "1212",
+    },
+  ],
 };
 
 export const employeeSlice = createSlice({

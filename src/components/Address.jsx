@@ -1,6 +1,6 @@
 import InputField from "./Field";
 import Dropdown from "./Dropdown";
-import { states } from "../data/states.js";
+import { states } from "../constants/states.js";
 
 export default function Address({ formData, updateField }) {
   return (
