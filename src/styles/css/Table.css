@@ -1,0 +1,126 @@
+.table-container {
+  width: 90%;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.table-container h1 {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.table-container .table-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.table-container .table-controls label {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.table-container .table-controls label select,
+.table-container .table-controls label input[type=text] {
+  padding: 5px 8px;
+  font-size: 14px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-bottom: 1px solid #000;
+}
+.table-container table thead {
+  background-color: #f8f8f8;
+}
+.table-container table thead th {
+  padding: 10px 12px;
+  border-bottom: 2px solid #ccc;
+  text-align: left;
+  user-select: none;
+  vertical-align: middle;
+}
+.table-container table thead th .header-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.table-container table thead th .header-cell .sort-icons {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  line-height: 10px;
+}
+.table-container table thead th .header-cell .sort-icons span {
+  color: #bbb;
+}
+.table-container table thead th .header-cell .sort-icons span.active {
+  color: #000;
+  font-weight: bold;
+}
+.table-container table thead th:hover {
+  background-color: #f0f0f0;
+}
+.table-container table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.table-container table tbody tr td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+.table-container .table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+.table-container .table-footer .table-info {
+  font-size: 14px;
+  color: #333;
+}
+.table-container .table-footer .pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.table-container .table-footer .pagination button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: #000;
+  transition: background-color 0.2s ease;
+}
+.table-container .table-footer .pagination button:hover:not(:disabled) {
+  background-color: #000;
+  color: #fff;
+}
+.table-container .table-footer .pagination button:disabled {
+  color: #888;
+  cursor: not-allowed;
+}
+.table-container .table-footer .pagination button.active {
+  background: #e0e0e0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: default;
+  font-weight: bold;
+}
+.table-container .table-footer .pagination button.active:hover {
+  background: #e0e0e0;
+  color: #000;
+}
+.table-container .table-footer .pagination span {
+  font-size: 14px;
+  padding: 6px 10px;
+  color: #000;
+}
+
+/*# sourceMappingURL=Table.css.map */
