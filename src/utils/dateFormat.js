@@ -5,5 +5,3 @@ export function formatDateUS(date) {
   const yyyy = date.getFullYear();
   return `${mm}/${dd}/${yyyy}`;
 }
-
-//console.log(event.toLocaleString("en-GB", { timeZone: "UTC" }));

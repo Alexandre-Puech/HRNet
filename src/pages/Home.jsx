@@ -57,7 +57,7 @@ export default function Home() {
         />
         <Address formData={formData} updateField={updateField} />
         <Dropdown
-          label="Departments"
+          label="Department"
           options={departments}
           name="department"
           value={formData.department}

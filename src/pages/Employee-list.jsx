@@ -13,5 +13,3 @@ export default function EmployeeList() {
     </>
   );
 }
-
-// {"employee":{"employees":[{"firstName":"aa","lastName":"aa","dateOfBirth":"07/01/2025","startDate":"07/01/2025","department":"engineering","street":"aaa","city":"aa","livingState":"MH","zipCode":"12"}]}}

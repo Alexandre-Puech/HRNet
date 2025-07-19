@@ -19,7 +19,7 @@ export default function Address({ formData, updateField }) {
         onChange={(value) => updateField("city", value)}
       />
       <Dropdown
-        label="States"
+        label="State"
         options={states}
         name="department"
         value={formData.livingState}
