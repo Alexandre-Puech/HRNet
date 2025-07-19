@@ -1406,6 +1406,14 @@ react-dom@^19.1.0:
   dependencies:
     scheduler "^0.26.0"
 
+react-dropdown-oc-ap@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-dropdown-oc-ap/-/react-dropdown-oc-ap-0.5.0.tgz#4510066b949343b05b59e4c95e6ca80060e92e31"
+  integrity sha512-dP8AeUSFThEjm7LY1mkHMKEpMmLUlTUf2wud2BXz/CIkJPfwHmlS5c0RPhn6lwBENssCb9HgjBKgsfoO7V5R8A==
+  dependencies:
+    react "^19.1.0"
+    react-dom "^19.1.0"
+
 react-redux@^9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-9.2.0.tgz#96c3ab23fb9a3af2cb4654be4b51c989e32366f5"

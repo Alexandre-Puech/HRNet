@@ -1,40 +1,33 @@
+import { Dropdown as DropdownBase } from "react-dropdown-oc-ap";
+import "../styles/css/Dropdown.css";
+
 export default function Dropdown({
   label,
   name,
   value,
   options = [],
   onChange,
+  className = "",
+  disabled = false,
+  required = false,
 }) {
-  const id = name ?? label.toLowerCase().replace(/\s+/g, "-");
-
-  const handleChange = (e) => {
-    onChange?.(e.target.value);
+  const id = name ?? label?.toLowerCase().replace(/\s+/g, "-");
+  const handleChange = (selected) => {
+    onChange?.(selected?.value ?? selected);
   };
 
   return (
-    <div className="dropdown-container">
-      {label && (
-        <label htmlFor={id} className="dropdown-label">
-          {label}
-        </label>
-      )}
-      <select
-        className="dropdown"
-        value={value ?? ""}
-        onChange={handleChange}
-        name={name}
+    <div className={className}>
+      <DropdownBase
         id={id}
-      >
-        {options.map((option, index) => {
-          const optionValue = option.value ?? option.abbreviation ?? option;
-          const label = option.label ?? option.name ?? option;
-          return (
-            <option key={index} value={optionValue}>
-              {label}
-            </option>
-          );
-        })}
-      </select>
+        name={name}
+        label={label}
+        value={value}
+        options={options}
+        onChange={handleChange}
+        disabled={disabled}
+        required={required}
+      />
     </div>
   );
 }

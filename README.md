@@ -3,3 +3,4 @@ It allows to add employees to a list, and viex that list.
 
 React libraries used:
 => https://reactdatepicker.com/
+=> https://tanstack.com/table/latest
